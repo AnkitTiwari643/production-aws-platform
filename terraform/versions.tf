@@ -6,7 +6,7 @@ terraform {
       version = "~> 5.0"
     }
   }
-  # For interview demo you can comment this out to use local state.
+  # For a local demo you can comment this out to use local state.
   # For real use, create bucket + table first and uncomment.
   # backend "s3" {
   #   bucket         = "YOUR-TERRAFORM-STATE-BUCKET"

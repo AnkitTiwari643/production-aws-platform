@@ -7,4 +7,4 @@ Ways I keep it cheap:
 - Aurora min 0.5 ACU, scale to 0 not supported but pauses low
 - ECR lifecycle keeps 20 images
 
-Prod sizing: 3x 0.5vCPU/1GB + dual NAT + Aurora 0.5–4 ACU ≈ $220–350/mo before data transfer. Right-size via CPU/mem analysis (see resume FinOps bullet).
+Prod sizing: 3x 0.5vCPU/1GB + dual NAT + Aurora 0.5–4 ACU ≈ $220–350/mo before data transfer. Right-size via CPU/mem utilization analysis.

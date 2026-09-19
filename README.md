@@ -1,13 +1,13 @@
-# Production AWS Platform — Proof of Ownership
+# Production AWS Platform — Terraform ECS + Aurora Reference
 
 ![CI](https://github.com/AnkitTiwari643/production-aws-platform/actions/workflows/ci.yml/badge.svg)
 ![Terraform Plan](https://github.com/AnkitTiwari643/production-aws-platform/actions/workflows/terraform-plan.yml/badge.svg)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 
 > Owner: Ankit Kumar Tiwari — DevOps Engineer (AWS · Terraform · GitHub Actions · ECS)
-> This repo proves I can own a production service 0→prod: network, compute, data, CI/CD, security gates, observability, cost, and runbooks.
+> Production-style reference platform: a service taken 0→prod with network, compute, data, CI/CD, security gates, observability, cost control, and runbooks — operated end to end.
 
-**Mirrors resume scope:** coupon-service delivery (DNS/ALB/ECS/Aurora via Terraform) + compliance-grade GitHub Actions pipeline (branching, PR approvals, ECR, infra approval gate).
+**Scope:** coupon-service-style delivery (DNS/ALB/ECS/Aurora via Terraform) + compliance-grade GitHub Actions pipeline (branching, PR approvals, ECR, infra approval gate).
 
 ## Architecture
 
@@ -20,14 +20,14 @@ Users → Route53 → ALB (public) → ECS Fargate (private) → Aurora Serverle
 
 VPC: 10.0.0.0/16, 2 AZs, public (ALB/NAT) + private (ECS/RDS). Least-privilege SGs. No long-lived AWS keys — GitHub OIDC only.
 
-## Proof artifacts (what a reviewer checks in 5 min)
+## What's inside (5-min tour)
 
 - `terraform/` — VPC/ALB/ECS/Aurora/ECR/OIDC as code, S3 remote state, `envs/dev.tfvars` + `prod.tfvars`
 - `.github/workflows/` — `ci.yml` (build+scan+push), `terraform-plan.yml` (plan on PR + PR comment), `terraform-apply.yml` (apply on main with environment approval)
 - `DECISIONS.md` — why ECS Fargate + Aurora Serverless v2 over EKS/RDS-provisioned
 - `runbook/DR-failover.md` + `runbook/release-rollback.md` — what I own on-call
 - `COST.md` — ~$45–75/mo dev (destroy when idle), prod sizing table
-- `load-test/k6.js` — smoke to 500 RPS, pattern for 3k RPS claim
+- `load-test/k6.js` — smoke test to 500 RPS; raise stages for higher-RPS soak tests
 
 ## Run in 10 minutes (dev)
 
@@ -35,7 +35,7 @@ Prereqs: AWS account, Terraform ~>1.9, AWS CLI v2, Node 20, Docker.
 
 ```bash
 # 1. Backend (once): create S3 + DynamoDB OR use local backend for demo
-# Edit terraform/backend.tf if you want local state for interview demo
+# Edit terraform/backend.tf if you want local state for a local demo
 
 # 2. Configure
 cp terraform/envs/dev.tfvars.example terraform/envs/dev.tfvars  # if present, else edit envs/dev.tfvars
@@ -78,7 +78,7 @@ See `COST.md`. Dev defaults to Fargate 0.25vCPU/0.5GB x2, Aurora Serverless v2 0
 
 ## Replace placeholders
 
-Search `AnkitTiwari643`, `YOUR-ACCOUNT-ID`, `example.com` and replace. Then update resume link to this repo.
+Search `YOUR-ACCOUNT-ID` and `example.com` and replace with your values.
 
 ## License
 

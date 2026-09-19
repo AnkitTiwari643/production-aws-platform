@@ -22,5 +22,5 @@ git revert <bad-commit>
 terraform apply -var-file=envs/prod.tfvars
 ```
 
-## Multi-region note (resume BFCM scope)
+## Multi-region note (production BFCM pattern)
 This demo is single-region. Prod pattern I owned: active-active + Route53 health checks. To extend: duplicate stack in second region, Route53 latency/failover routing, Aurora Global DB. RTO target <60s, verified by game-day killing primary tasks.
