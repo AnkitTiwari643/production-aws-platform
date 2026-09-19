@@ -1,0 +1,22 @@
+name: pr-checks
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Branch naming (feat|fix|chore|infra)/xxx
+        run: |
+          BRANCH="${{ github.head_ref }}"
+          echo "Branch: $BRANCH"
+          if ! echo "$BRANCH" | grep -Eq '^(feat|fix|chore|infra)/[a-z0-9-]+$'; then
+            echo "❌ Branch must match (feat|fix|chore|infra)/kebab-case"; exit 1;
+          fi
+      - name: PR template checklist present
+        run: |
+          BODY=$(cat "${{ github.event.pull_request.body }}" 2>/dev/null || echo "")
+          echo "$BODY" | grep -qi "risk\|rollback" || (echo "❌ PR must fill Risk + Rollback sections"; exit 1)

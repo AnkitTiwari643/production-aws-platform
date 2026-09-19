@@ -1,0 +1,11 @@
+project        = "coupon-platform"
+environment    = "dev"
+aws_region     = "ap-south-1"
+single_nat     = true
+app_count      = 2
+app_cpu        = "256"
+app_memory     = "512"
+aurora_min_acu = "0.5"
+aurora_max_acu = "1.0"
+github_org     = "YOUR-USERNAME"
+github_repo    = "production-aws-platform"
