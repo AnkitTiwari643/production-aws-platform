@@ -61,9 +61,9 @@ variable "db_username" {
 }
 
 variable "github_org" {
-  description = "GitHub org/user for OIDC trust, e.g. YOUR-USERNAME"
+  description = "GitHub org/user for OIDC trust, e.g. AnkitTiwari643"
   type        = string
-  default     = "YOUR-USERNAME"
+  default     = "AnkitTiwari643"
 }
 
 variable "github_repo" {

@@ -8,18 +8,18 @@ Your project is committed locally and validated (`terraform validate = Success`)
 1. Go to https://github.com/new
    - Repository name: `production-aws-platform`
    - Public, do NOT add README/.gitignore/license
-   - Create repository. Copy the https URL, e.g. `https://github.com/YOUR-USERNAME/production-aws-platform.git`
+   - Create repository. Copy the https URL, e.g. `https://github.com/AnkitTiwari643/production-aws-platform.git`
 
 2. In PowerShell, from this folder:
 ```powershell
 Set-Location -LiteralPath "C:\Users\harid\Documents\Default Project\production-aws-platform"
-git remote add origin https://github.com/YOUR-USERNAME/production-aws-platform.git
+git remote add origin https://github.com/AnkitTiwari643/production-aws-platform.git
 git branch -M main
 git push -u origin main
 ```
 
 3. Tell me your username + repo URL. I will:
-   - replace all `YOUR-USERNAME` in README/terraform/.github with your real username
+   - replace all `AnkitTiwari643` in README/terraform/.github with your real username
    - amend + push
    - update `ANKIT_KUMAR_TIWARI_Resume_Owner.md` Projects link to the live repo
    - re-commit
@@ -42,4 +42,4 @@ gh repo create production-aws-platform --public --source="C:\Users\harid\Documen
 
 ## Replace placeholders before interview
 
-Search in repo for `YOUR-USERNAME` (6 files) and replace with your GitHub username.
+Search in repo for `AnkitTiwari643` (6 files) and replace with your GitHub username.

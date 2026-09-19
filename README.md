@@ -1,7 +1,7 @@
 # Production AWS Platform — Proof of Ownership
 
-![CI](https://github.com/YOUR-USERNAME/production-aws-platform/actions/workflows/ci.yml/badge.svg)
-![Terraform Plan](https://github.com/YOUR-USERNAME/production-aws-platform/actions/workflows/terraform-plan.yml/badge.svg)
+![CI](https://github.com/AnkitTiwari643/production-aws-platform/actions/workflows/ci.yml/badge.svg)
+![Terraform Plan](https://github.com/AnkitTiwari643/production-aws-platform/actions/workflows/terraform-plan.yml/badge.svg)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 
 > Owner: Ankit Kumar Tiwari — DevOps Engineer (AWS · Terraform · GitHub Actions · ECS)
@@ -78,7 +78,7 @@ See `COST.md`. Dev defaults to Fargate 0.25vCPU/0.5GB x2, Aurora Serverless v2 0
 
 ## Replace placeholders
 
-Search `YOUR-USERNAME`, `YOUR-ACCOUNT-ID`, `example.com` and replace. Then update resume link to this repo.
+Search `AnkitTiwari643`, `YOUR-ACCOUNT-ID`, `example.com` and replace. Then update resume link to this repo.
 
 ## License
 
